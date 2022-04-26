@@ -14,9 +14,10 @@ public class Programa {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("aulaJPA_Maven");
 		EntityManager em = emf.createEntityManager();
 		
-		Usuario u = em.find(Usuario.class, 2);
+		Usuario u = em.find(Usuario.class, 1);
 		
-		System.out.println(u);
+		
+		System.out.println(u.getNome());
 		
 		em.close();
 		emf.close();
