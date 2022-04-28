@@ -1,18 +1,13 @@
 package visao;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 import modelo.Usuario;
 
 public class CadastrarUsuario {
 	public static void main(String[] args) {
-		
-		
-		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("aulaJPA_Maven");
-		EntityManager em = emf.createEntityManager();
+	
+		EntityManager em = FabricaConexao.getEm();
 		
 		Usuario u1 = new Usuario("Steve Rogers", "cap@gmail.com");
 		Usuario u2 = new Usuario("Tony Stark", "tony@gmail.com");
@@ -27,7 +22,6 @@ public class CadastrarUsuario {
 		em.getTransaction().commit();
 		
 		em.close();
-		emf.close();
 		
 		System.out.println("Pronto!!!");
 	}
