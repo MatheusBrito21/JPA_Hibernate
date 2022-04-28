@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 import modelo.Usuario;
 
-public class Programa {
+public class CadastrarUsuario {
 	public static void main(String[] args) {
 		
 		
