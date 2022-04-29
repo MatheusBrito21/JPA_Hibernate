@@ -10,18 +10,14 @@ public class AlterarUsuario {
 		EntityManager em = FabricaConexao.getEm();
 		
 		
-		Usuario u = em.find(Usuario.class, 4);
+		Usuario u = em.find(Usuario.class, 11);
 		
 		em.getTransaction().begin();
+		u.setNome("Viúva Negra");
 		
-		u.setEmail("thor@gmail.com");
-		u.setNome("Thor Odinson");
-		
-		em.merge(u);
 		
 		em.getTransaction().commit();
 		
-		em.getEntityManagerFactory().close();
 		em.close();
 		
 		
