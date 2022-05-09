@@ -23,7 +23,7 @@ public class DAO<E> {
 	public DAO() {
 		this(null);
 	}
-	
+	//construtor
 	public DAO(Class<E> classe){
 		this.classe = classe;
 		em = emf.createEntityManager();
@@ -44,7 +44,7 @@ public class DAO<E> {
 	}
 	
 	public DAO<E> incluir(E entidade){
-		em.persist(entidade);;
+		em.persist(entidade);
 		return this;
 	}
 	
