@@ -13,15 +13,23 @@ import javax.persistence.OneToMany;
 @Entity
 public class Pedido {
 	
+	//Define o id e a estratégia de geração de valor
+	//Identity -> cada instancia tera um valor único e sequencial
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	//define que a coluna não aceita valores nulos
 	@Column(nullable = false)
 	private Date data;
 	
+	//faz a relação Bidirecional Um pra Muitos com a classe ItemPedido
+	//F.Key -> P.Key da classe ItemPedido
+	//Obrigatório, a menos que o relacionamento seja unidirecional.
 	@OneToMany(mappedBy = "pedido")
 	private List<ItemPedido> itens;
+	
+	
 	public Pedido() {
 		
 	}

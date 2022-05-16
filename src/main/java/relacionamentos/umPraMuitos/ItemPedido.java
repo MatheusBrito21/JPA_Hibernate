@@ -9,14 +9,26 @@ import javax.persistence.ManyToOne;
 
 import modelo.Produto;
 
+/*
+ * Essa é uma classe intermediária e
+ * irá conter uma quantidade X de produtos
+ * tendo como atributos a quantidade e preço, facilitando assim
+ * a soma do valor subtotal, aplicação de desconto, etc...
+ */
+
+
 @Entity
 public class ItemPedido {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	//faz a relação muitos pra um (bidirecional) com a classe Pedido
+	//F.Key -> P.Key da classe pedido
 	@ManyToOne
 	private Pedido pedido;
+	
+	//faz a relação Muitos pra Um com a classe produto
 	@ManyToOne
 	private Produto prod;
 	
@@ -52,6 +64,11 @@ public class ItemPedido {
 	public Produto getProd() {
 		return prod;
 	}
+	
+	/*
+	 * Metodo que pega o preço do produto passado
+	 * e atribui ao ItemPedido atual
+	 */
 	public void setProd(Produto prod) {
 		this.prod = prod;
 		
