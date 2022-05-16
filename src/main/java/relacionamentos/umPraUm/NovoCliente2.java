@@ -1,8 +1,6 @@
-package visao;
+package relacionamentos.umPraUm;
 
 import infra.DAO;
-import relacionamentos.umPraUm.Assento;
-import relacionamentos.umPraUm.Cliente;
 
 public class NovoCliente2 {
 	public static void main(String[] args) {
