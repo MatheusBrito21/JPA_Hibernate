@@ -11,10 +11,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "filmes")
+@NamedQueries(
+		@NamedQuery(name = "obterPorNota",
+		query = "select f from Filme f where f.nota > :nota")
+	)
 public class Filme {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
