@@ -21,6 +21,7 @@ import javax.persistence.Table;
 		@NamedQuery(name = "obterPorNota",
 		query = "select f from Filme f where f.nota > :nota")
 	)
+
 public class Filme {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
